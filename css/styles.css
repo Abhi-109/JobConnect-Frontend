@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f1f5f9;
+    color: #334155;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header and Navbar Styling */
+.navbar {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo .logo-image {
+    height: 40px;
+    display: block;
+}
+
+/* Navigation Menu (Desktop) */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #2563eb;
+}
+
+/* Search Bar Styling */
+.search-container .search {
+    display: flex;
+    border: 1px solid #cbd5e1;
+    border-radius: 9999px; /* pill shape */
+    overflow: hidden;
+}
+
+.search-container input {
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    outline: none;
+    width: 250px;
+}
+
+.search-container button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Mobile-specific controls - Hidden on Desktop */
+.mobile-search-btn,
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #334155;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content Placeholder */
+main .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Hide desktop nav elements */
+    .nav-menu {
+        display: none; /* Hide the menu by default on mobile */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-menu ul a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .search-container .search {
+        width: 100%;
+    }
+
+    .search-container input {
+        width: 100%;
+        flex-grow: 1;
+    }
+}
