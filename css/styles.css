@@ -148,6 +148,7 @@ form:hover .fa{
     color: white;
     padding: 120px 0 80px;
     text-align: center;
+    width: 100%;
 }
 
 .hero-content h1 {
