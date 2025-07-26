@@ -1,77 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JobConnect - Home</title>
+    <title>JobConnect - Final Navbar</title>
 
-    <!-- Favicon -->
     <link rel="icon" href="assets/icons/fav_icon.png" type="image/png" />
 
-    <!-- Manifest for PWA -->
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#0050a0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Google Fonts (Open Sans for Naukri-like typography) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- Font Awesome for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <!-- Header with Navigation -->
+</head>
+<body>
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="assets/icons/logo.png" alt="JobConnect Logo" class="logo-image" />
             </a>
-            <!-- This button is redundant if nav-toggle shows the menu with the search bar, so it's hidden via CSS by default. You can choose to implement separate logic for it if needed. -->
-            <button class="mobile-search-btn" aria-label="Toggle search">
-                <i class="fas fa-search"></i>
-            </button>
-            
-            <!-- Navigation Toggle for Mobile -->
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
+
+            <div class="search-container">
+                <form action="">
+                    <input type="search" placeholder="search-here.......">
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+
             <nav class="nav-menu">
-                <!-- Search Bar (Inside Menu) -->
-                <div class="search-container">
-                    <div class="search">
-                        <input placeholder="Search jobs..." type="text" aria-label="Search jobs" />
-                        <button type="submit" id="search-btn" aria-label="Search">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#find-jobs"><i class="fas fa-search"></i><span>Find Jobs</span></a></li>
+                    <li><a href="#reviews"><i class="fas fa-building"></i><span>Company Reviews</span></a></li>
+                    <li><a href="#advice"><i class="fas fa-book-open"></i><span>Career Advice</span></a></li>
+                    <li><a href="#employers" class="nav-link-secondary"><i class="fas fa-briefcase"></i><span>For Employers</span></a></li>
+                    <li><a href="#login" class="nav-link-secondary"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li>
+                    <li><a href="#register" class="btn btn-primary">Register</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Placeholder for Content -->
+    <div class="overlay"></div>
+
     <main>
-      <div class="container">
-        <p>Rest of the homepage content goes here...</p>
-      </div>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Bridging Talent and Opportunity</h1>
+                    <p>Connect with your dream job or find the perfect candidate. JobConnect makes hiring simple and
+                        effective.</p>
+    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Find Jobs</button>
+                        <button class="btn btn-secondary">Post a Job</button>
+                    </div>
+    
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-search"></i>
+                            <h3>Smart Job Search</h3>
+                            <p>Find opportunities that match your skills and preferences</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h3>Connect Directly</h3>
+                            <p>Direct communication between employers and candidates</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Track Progress</h3>
+                            <p>Monitor your applications and hiring progress</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- JavaScript for Navbar -->
     <script src="js/scripts.js"></script>
-  </body>
+</body>
 </html>
