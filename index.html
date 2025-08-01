@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,38 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/header.css" />
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="container">
-            <button class="hamburger-menu" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
 
-            <a href="index.html" class="logo">
-                <img src="assets/icons/logo.png" alt="JobConnect Logo" class="logo-image" />
-            </a>
+    <!-- The header content from header.html will be loaded into this div by JavaScript. -->
+    <div id="header-placeholder"></div>
 
-            <div class="search-container">
-                <form action="">
-                    <input type="search" placeholder="search-here.......">
-                    <i class="fa fa-search"></i>
-                </form>
-            </div>
-
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#find-jobs"><i class="fas fa-search"></i><span>Find Jobs</span></a></li>
-                    <li><a href="#reviews"><i class="fas fa-building"></i><span>Company Reviews</span></a></li>
-                    <li><a href="#advice"><i class="fas fa-book-open"></i><span>Career Advice</span></a></li>
-                    <li><a href="#employers" class="nav-link-secondary"><i class="fas fa-briefcase"></i><span>For Employers</span></a></li>
-                    <li><a href="#register" class="btn btn-primary">Register</a></li>
-                    <li><a href="#login" class="nav-link-secondary"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <!-- The overlay for the mobile menu -->
     <div class="overlay"></div>
 
     <main>
@@ -53,12 +31,12 @@
                     <h1>Bridging Talent and Opportunity</h1>
                     <p>Connect with your dream job or find the perfect candidate. JobConnect makes hiring simple and
                         effective.</p>
-    
+
                     <div class="hero-buttons">
                         <button class="btn btn-primary">Find Jobs</button>
                         <button class="btn btn-secondary">Post a Job</button>
                     </div>
-    
+
                     <div class="hero-features">
                         <div class="feature">
                             <i class="fas fa-search"></i>
@@ -79,8 +57,162 @@
                 </div>
             </div>
         </section>
+
+        <section class="moving-categories">
+            <div class="scroll-wrapper">
+                <div class="scroll-track">
+                    <span>Design</span>
+                    <span>Marketing</span>
+                    <span>Development</span>
+                    <span>Finance</span>
+                    <span>UI/UX</span>
+                    <span>Testing</span>
+                    <span>Data Science</span>
+                    <!-- Duplicate for infinite loop -->
+                    <span>Design</span>
+                    <span>Marketing</span>
+                    <span>Development</span>
+                    <span>Finance</span>
+                    <span>UI/UX</span>
+                    <span>Testing</span>
+                    <span>Data Science</span>
+                    <span>Design</span>
+                    <span>Marketing</span>
+                    <span>Development</span>
+                    <span>Finance</span>
+                    <span>UI/UX</span>
+                    <span>Testing</span>
+                    <span>Data Science</span>
+                </div>
+            </div>
+        </section>
+        <section class="job-grid">
+            <div class="card">
+                <h3 class="job-title">Senior Frontend Developer</h3>
+                <div class="company">InnovateX</div>
+                <div class="job-details">San Francisco, CA • Full-time</div>
+                <p class="job-description">Build next-gen user interfaces with React and TypeScript.</p>
+                <div class="job-tags">
+                    <span class="job-tag">React</span>
+                    <span class="job-tag">TypeScript</span>
+                    <span class="job-tag">Frontend</span>
+                </div>
+                <button class="apply-button">apply now</button>
+            </div>
+            <div class="card">
+                <h3 class="job-title">"Backend Developer (Python)</h3>
+                <div class="company">CodeCraft Solutions</div>
+                <div class="job-details">Bengaluru, KA • Full-time</div>
+                <p class="job-description">Design and implement scalable APIs and backend services using Django.</p>
+                <div class="job-tags">
+                    <span class="job-tag">Python</span>
+                    <span class="job-tag">Django</span>
+                    <span class="job-tag">REST APIs</span>
+                </div>
+                <button class="apply-button">apply now</button>
+            </div>
+            <div class="card">
+                <h3 class="job-title">UI/UX Designer</h3>
+                <div class="company">Creative Minds Agency</div>
+                <div class="job-details">New York, NY • Full-time</div>
+                <p class="job-description">Create intuitive and visually appealing user experiences for web and mobile applications.</p>
+                <div class="job-tags">
+                    <span class="job-tag">UI Design</span>
+                    <span class="job-tag">UX Research</span>
+                    <span class="job-tag">Figma</span>
+                </div>
+                <button class="apply-button">apply now</button>
+            </div>
+            <div class="card">
+                <h3 class="job-title">Data Scientist</h3>
+                <div class="company">Data Insights Corp</div>
+                <div class="job-details">Seattle, WA • Full-time</div>
+                <p class="job-description">Analyze complex datasets, build predictive models, and extract actionable insights.</p>
+                <div class="job-tags">
+                    <span class="job-tag">Machine Learning</span>
+                    <span class="job-tag">Python</span>
+                    <span class="job-tag">SQL</span>
+                </div>
+                <button class="apply-button">apply now</button>
+            </div>
+            <div class="card">
+                <h3 class="job-title">Marketing Specialist</h3>
+                <div class="company">Global Reach Marketing</div>
+                <div class="job-details">London, UK • Full-time</div>
+                <p class="job-description">Develop and execute digital marketing campaigns to increase brand awareness and lead generation.</p>
+                <div class="job-tags">
+                    <span class="job-tag">SEO</span>
+                    <span class="job-tag">Content Marketing</span>
+                    <span class="job-tag">Social Media</span>
+                </div>
+                <button class="apply-button">apply now</button>
+            </div>
+            <div class="card">
+                <h3 class="job-title">DevOps Engineer</h3>
+                <div class="company">CloudNative Solutions</div>
+                <div class="job-details">Austin, TX • Full-time</div>
+                <p class="job-description">Automate and manage infrastructure, CI/CD pipelines, and cloud deployments.</p>
+                <div class="job-tags">
+                    <span class="job-tag">AWS</span>
+                    <span class="job-tag">Docker</span>
+                    <span class="job-tag">Kubernetes</span>
+                </div>
+                <button class="apply-button">apply now</button>
+            </div>
+        </section>
+        
+
     </main>
 
+     <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column brand">
+                    <h3 class="footer-logo">JobConnect</h3>
+                    <p>Bridging Talent and Opportunity. Find your next career move or hire the best talent with us.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="#">Find Jobs</a></li>
+                        <li><a href="#">Create Resume</a></li>
+                        <li><a href="#">My Applications</a></li>
+                        <li><a href="#">Saved Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Search Resumes</a></li>
+                        <li><a href="#">Company Profile</a></li>
+                        <li><a href="#">Hiring Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help/FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 JobConnect. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/scripts.js"></script>
+    <script src="js/header.js"></script>
 </body>
+
 </html>
