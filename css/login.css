@@ -1,0 +1,252 @@
+ /* --- General Body & Reset --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem; /* 16px */
+            box-sizing: border-box;
+        }
+
+        /* --- Main Container --- */
+        .auth-container {
+            width: 100%;
+            max-width: 28rem; /* 448px */
+        }
+
+        .auth-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0; /* slate-200 */
+            border-radius: 1rem; /* 16px */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            padding: 2rem; /* 32px */
+        }
+
+        /* --- Header --- */
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem; /* 24px */
+        }
+        .header h1 {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #1e293b; /* slate-800 */
+            margin: 0;
+        }
+        .header p {
+            color: #64748b; /* slate-500 */
+            margin-top: 0.5rem; /* 8px */
+        }
+
+        /* --- Role Switcher --- */
+        .role-switcher {
+            margin-bottom: 1.5rem; /* 24px */
+            display: flex;
+            background-color: #f1f5f9; /* slate-100 */
+            padding: 0.25rem; /* 4px */
+            border-radius: 0.5rem; /* 8px */
+        }
+        .role-switcher button {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem; /* 6px */
+            font-size: 0.875rem; /* 14px */
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            background-color: transparent;
+            color: #64748b; /* slate-500 */
+        }
+        .role-switcher button.active {
+            background-color: #ffffff;
+            color: #2563eb; /* blue-600 */
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        }
+        .role-switcher button:not(.active):hover {
+            background-color: #e2e8f0; /* slate-200 */
+        }
+        .role-switcher button:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px #3b82f6; /* focus ring */
+        }
+
+        /* --- Forms --- */
+        .form-container {
+            display: none; /* Hidden by default */
+        }
+        .form-container.active {
+            display: block; /* Show active form */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* 24px */
+        }
+        form h2 {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            text-align: center;
+            color: #334155; /* slate-700 */
+            margin: 0;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            color: #334155; /* slate-700 */
+            margin-bottom: 0.25rem; /* 4px */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #cbd5e1; /* slate-300 */
+            border-radius: 0.375rem; /* 6px */
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: 1px solid #3b82f6;
+            border-color: #3b82f6;
+        }
+        .forgot-password {
+            text-align: right;
+            font-size: 0.875rem; /* 14px */
+        }
+        .forgot-password a {
+            font-weight: 500;
+            color: #2563eb; /* blue-600 */
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            color: #3b82f6; /* blue-500 */
+        }
+        .submit-btn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.5rem; /* 8px */
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            color: #ffffff;
+            background-color: #2563eb; /* blue-600 */
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #1d4ed8; /* blue-700 */
+        }
+        .submit-btn:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        
+        /* --- Message Box for feedback --- */
+        .message-box {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+            display: none; /* Hidden by default */
+        }
+        .message-box.success {
+            background-color: #dcfce7; /* green-100 */
+            color: #166534; /* green-800 */
+        }
+        .message-box.error {
+            background-color: #fee2e2; /* red-100 */
+            color: #991b1b; /* red-800 */
+        }
+
+
+        /* --- Separator --- */
+        .separator {
+            margin: 1.5rem 0;
+            position: relative;
+            text-align: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            border-top: 1px solid #cbd5e1; /* slate-300 */
+            z-index: 1;
+        }
+        .separator span {
+            position: relative;
+            background-color: #ffffff;
+            padding: 0 0.5rem; /* 8px */
+            color: #64748b; /* slate-500 */
+            font-size: 0.875rem; /* 14px */
+            z-index: 2;
+        }
+
+        /* --- Social Logins --- */
+        .social-logins {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem; /* 12px */
+        }
+        .social-btn {
+            display: inline-flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #cbd5e1; /* slate-300 */
+            border-radius: 0.375rem; /* 6px */
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            text-decoration: none;
+        }
+        .social-btn:hover {
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .social-btn svg {
+            width: 1.25rem; /* 20px */
+            height: 1.25rem; /* 20px */
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* --- Toggle Text --- */
+        .toggle-container {
+            margin-top: 2rem; /* 32px */
+            text-align: center;
+            font-size: 0.875rem; /* 14px */
+            color: #475569; /* slate-600 */
+        }
+        .toggle-container a {
+            font-weight: 500;
+            color: #2563eb; /* blue-600 */
+            text-decoration: none;
+        }
+        .toggle-container a:hover {
+            color: #3b82f6; /* blue-500 */
+        }

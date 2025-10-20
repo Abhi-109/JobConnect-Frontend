@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard - JobConnect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General & Reset --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 80rem; /* 1280px */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 640px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        /* --- Header --- */
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .header h1 {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 700;
+            color: #1e293b; /* slate-800 */
+        }
+        .header nav a {
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            color: #475569; /* slate-600 */
+            margin-left: 1rem;
+            transition: color 0.2s;
+        }
+        .header nav a:hover {
+            color: #2563eb; /* blue-600 */
+        }
+        .logout-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.375rem; /* 6px */
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            color: #ffffff;
+            background-color: #2563eb; /* blue-600 */
+            margin-left: 2rem;
+            transition: background-color 0.2s;
+        }
+        .logout-btn:hover {
+            background-color: #1d4ed8; /* blue-700 */
+        }
+
+        /* --- Main Content --- */
+        main {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 0.5rem; /* 8px */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 2rem;
+        }
+        .content-card h2 {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #1e293b; /* slate-800 */
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .content-card .subtitle {
+            color: #64748b; /* slate-500 */
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Post Job Form Area --- */
+        .form-area {
+            background-color: #f8fafc; /* slate-50 */
+            border: 1px solid #e2e8f0; /* slate-200 */
+            border-radius: 0.5rem; /* 8px */
+            padding: 1.5rem;
+        }
+        .form-area h3 {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 0.25rem;
+        }
+        .form-area .form-subtitle {
+            color: #64748b; /* slate-500 */
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        .form-area form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .form-area label {
+            display: block;
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .form-area input,
+        .form-area textarea {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #cbd5e1; /* slate-300 */
+            border-radius: 0.375rem; /* 6px */
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .form-area input:focus,
+        .form-area textarea:focus {
+            outline: 1px solid #3b82f6;
+            border-color: #3b82f6;
+        }
+        .post-job-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid transparent;
+            border-radius: 0.375rem; /* 6px */
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            color: #ffffff;
+            background-color: #2563eb; /* blue-600 */
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+        @media (min-width: 640px) {
+            .post-job-btn {
+                width: auto;
+            }
+        }
+        .post-job-btn:hover {
+            background-color: #1d4ed8; /* blue-700 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>JobConnect</h1>
+            <nav>
+                <a href="#">Dashboard</a>
+                <a href="#">Job Postings</a>
+                <a href="#">Applicants</a>
+                <a href="jobconnect-login.html" class="logout-btn">
+                    Logout
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="content-card">
+                <h2>Welcome, Recruiter!</h2>
+                <p class="subtitle">Manage your job postings and review applicants here.</p>
+    
+                <!-- Action Area: Post a New Job -->
+                <div class="form-area">
+                    <h3>Post a New Job</h3>
+                    <p class="form-subtitle">Fill out the details below to find your next great hire.</p>
+                    
+                    <form>
+                        <div>
+                            <label for="job-title">Job Title</label>
+                            <input type="text" id="job-title" placeholder="e.g., Senior Software Engineer">
+                        </div>
+                        <div>
+                            <label for="job-description">Job Description</label>
+                            <textarea id="job-description" rows="4" placeholder="Describe the role and responsibilities..."></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="post-job-btn">
+                                Post Job
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

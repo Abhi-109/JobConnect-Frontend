@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JobConnect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/header.css"> <!-- Link to your existing header CSS -->
+    <style>
+        body { font-family: 'Open Sans', sans-serif; background-color: #f8fafc; margin: 0; color: #334155; line-height: 1.7; }
+        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+        .content-card { background-color: #fff; border-radius: 1rem; padding: 2.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        h1 { font-size: 2.5rem; color: #1e293b; margin-top: 0; text-align: center; margin-bottom: 2rem;}
+        p { margin-bottom: 1rem; }
+        
+        /* --- Mission Statement --- */
+        .mission-statement { background-color: #eef2ff; color: #4338ca; padding: 1.5rem; border-radius: 0.5rem; border-left: 5px solid #4f46e5; margin: 2rem 0; }
+        .mission-statement h2 { margin-top: 0; }
+
+        /* --- NEW: Stats Section --- */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .stat-item .icon {
+            font-size: 2.5rem;
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+        }
+        .stat-item .number {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .stat-item .label {
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        /* --- NEW: Our Story Section --- */
+        .story-section {
+            margin-top: 3rem;
+        }
+        .story-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 2rem;
+        }
+        .story-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="container">
+            <div class="content-card">
+                <h1>About JobConnect</h1>
+                <p>Welcome to JobConnect, your premier destination for bridging the gap between exceptional talent and outstanding career opportunities. Our journey began with a simple yet powerful vision: to create a platform that simplifies the hiring process for both employers and job seekers, making it more efficient, transparent, and effective.</p>
+                
+                <!-- Stats Section -->
+                <section class="stats-section">
+                    <div class="stat-item">
+                        <div class="icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="number">15,000+</div>
+                        <div class="label">Jobs Posted</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <div class="number">2.5M+</div>
+                        <div class="label">Happy Candidates</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="icon"><i class="fas fa-building"></i></div>
+                        <div class="number">5,000+</div>
+                        <div class="label">Companies Hiring</div>
+                    </div>
+                </section>
+
+                <!-- Our Story Section -->
+                <section class="story-section">
+                    <h2>Our Story</h2>
+                    <div class="story-content">
+                        <p>Founded in 2024 by a team of passionate recruiters and tech enthusiasts, JobConnect was born out of a shared frustration with the traditional job market. We saw a landscape filled with clunky interfaces, endless application forms, and a disconnect between what companies were looking for and what candidates had to offer. We knew there had to be a better way.</p>
+                        <p>We started with a blank canvas and a commitment to user experience. Our goal was to build a platform that was intuitive for job seekers and powerful for recruiters. By focusing on direct communication, transparent reviews, and intelligent matching, we've created a dynamic ecosystem where meaningful professional connections are made every day.</p>
+                    </div>
+                </section>
+
+                <div class="mission-statement">
+                    <h2>Our Mission</h2>
+                    <p>Our mission is to empower professionals to build fulfilling careers and to help organizations discover the perfect candidates who will drive their success. We believe that the right job can transform a person's life, and the right person can transform a business.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/header.js"></script>
+</body>
+</html>
+

@@ -1,29 +1,101 @@
-<header class="navbar">
-    <div class="container">
-        <button class="hamburger-menu" aria-label="Toggle Navigation">
-            <i class="fas fa-bars"></i>
-        </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobConnect Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
 
-        <a href="index.html" class="logo">
-            <img src="assets/icons/logo.png" alt="JobConnect Logo" class="logo-image" />
-        </a>
-
-        <div class="search-container">
-            <!-- The form action is empty, as behavior is handled by JS -->
-            <form action="#" onsubmit="return false;">
-                <input type="search" placeholder="Search here...">
-                <i class="fa fa-search"></i>
-            </form>
+    <header class="navbar">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <a href="index.html" class="logo">
+                <img src="assets/icons/JobConnect-logo.png" alt="JobConnect Logo" class="logo-image" />
+            </a>
+    
+            <div class="search-container">
+                <form action="#" onsubmit="return false;">
+                    <input type="search" placeholder="Search here...">
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+    
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="company-review.html"><i class="fas fa-building"></i><span>Company Reviews</span></a></li>
+                    <li><a href="career_advice.html"><i class="fas fa-book-open"></i><span>Career Advice</span></a></li>
+                    <li><a href="services.html" class="nav-link-secondary"><i class="fas fa-briefcase"></i><span>Services</span></a></li>
+                    
+                    <li id="profile-button" style="display: none;"><a href="profile.html" class="nav-link-secondary"><i class="fas fa-user"></i><span>My Profile</span></a></li>
+                    
+                    <li><a href="login.html" id="auth-button" class="btn btn-primary">Login / Register</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#reviews"><i class="fas fa-building"></i><span>Company Reviews</span></a></li>
-                <li><a href="#advice"><i class="fas fa-book-open"></i><span>Career Advice</span></a></li>
-                <li><a href="#employers" class="nav-link-secondary"><i class="fas fa-briefcase"></i><span>For Employers</span></a></li>
-                <li><a href="#register" class="btn btn-primary">Register</a></li>
-                <li><a href="#login" class="nav-link-secondary"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <div class="overlay"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Hamburger Menu Logic ---
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            const overlay = document.querySelector('.overlay');
+            
+            if (hamburger && navMenu && overlay) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                });
+                overlay.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            }
+
+            // --- Authentication Button Logic ---
+            const authButton = document.getElementById('auth-button');
+            const profileButton = document.getElementById('profile-button');
+            const token = localStorage.getItem('authToken');
+
+            if (token && authButton) {
+                // --- User is logged in ---
+                
+                // 1. Change to Logout button
+                authButton.textContent = 'Logout';
+                authButton.href = '#'; // Prevent navigation
+
+                authButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('authToken'); // Clear the token
+                    window.location.href = 'login.html'; // Redirect to login page
+                });
+                
+                // 2. Decode token to check user role
+                try {
+                    const payloadBase64 = token.split('.')[1];
+                    const decodedPayload = JSON.parse(atob(payloadBase64));
+                    const userRole = decodedPayload.role;
+
+                    // 3. Show "My Profile" button only for job seekers
+                    if (userRole === 'seeker' && profileButton) {
+                        profileButton.style.display = 'list-item';
+                    }
+                } catch (error) {
+                    console.error("Failed to decode token:", error);
+                    // Handle cases where the token might be invalid
+                    localStorage.removeItem('authToken');
+                }
+            }
+            // If no token, the buttons remain in their default state.
+        });
+    </script>
+</body>
+</html>

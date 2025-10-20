@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.text();
         })
         .then(data => {
-            // Put the fetched HTML data into the element with the ID 'header-placeholder'
+            // Put the fetched HTML daata into the element with the ID 'header-placeholder'
             document.getElementById('header-placeholder').innerHTML = data;
 
             // --- 2. INITIALIZE HEADER-DEPENDENT SCRIPTS ---
@@ -79,3 +79,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+

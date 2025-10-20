@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Advice - JobConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .tab-active {
+            border-color: #2563eb; /* blue-600 */
+            color: #2563eb; /* blue-600 */
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+        .tab-inactive {
+            border-color: transparent;
+            color: #475569; /* slate-600 */
+        }
+        .tab-inactive:hover {
+            color: #1e293b; /* slate-800 */
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        /* Style for horizontal scrollbar on mobile tabs */
+        .mobile-scroll-tabs {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .mobile-scroll-tabs::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }
+    </style>
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- The overlay for the mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- Header -->
+    <!-- <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/><line x1="6" x2="6" y1="12" y2="12"/><line x1="10" x2="10" y1="12" y2="12"/></svg>
+                    <h1 class="text-2xl font-bold text-slate-800">JobConnect</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Jobs</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Companies</a>
+                    <a href="#" class="font-semibold text-blue-600">Career Advice</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">My Profile</a>
+                </nav>
+                <button class="md:hidden p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-b from-blue-50 to-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">Your Career Development Hub</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Tools, guides, and expert advice to help you build the future you want. From self-discovery to salary negotiation, we're with you every step of the way.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                <!-- Tab Navigation -->
+                <aside class="md:w-1/4">
+                    <nav id="tab-nav" class="flex flex-row md:flex-col gap-2 overflow-x-auto mobile-scroll-tabs md:overflow-visible" aria-label="Career Advice Sections">
+                        <button data-tab="tab1" class="tab-btn tab-active flex items-center text-left w-full p-3 rounded-lg border-l-4 font-semibold transition-all duration-200 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Career Planning
+                        </button>
+                        <button data-tab="tab2" class="tab-btn tab-inactive flex items-center text-left w-full p-3 rounded-lg border-l-4 font-semibold transition-all duration-200 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                            Application Toolkit
+                        </button>
+                        <button data-tab="tab3" class="tab-btn tab-inactive flex items-center text-left w-full p-3 rounded-lg border-l-4 font-semibold transition-all duration-200 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 8v8"/><path d="m8.5 14 3.5-3.5 3.5 3.5"/></svg>
+                            Interview Mastery
+                        </button>
+                        <button data-tab="tab4" class="tab-btn tab-inactive flex items-center text-left w-full p-3 rounded-lg border-l-4 font-semibold transition-all duration-200 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            Offer & Growth
+                        </button>
+                        <button data-tab="tab5" class="tab-btn tab-inactive flex items-center text-left w-full p-3 rounded-lg border-l-4 font-semibold transition-all duration-200 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Community & Events
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Tab Content -->
+                <div class="md:w-3/4">
+                    <!-- Section 1: Career Planning -->
+                    <div id="tab1" class="tab-content space-y-6">
+                        <h3 class="text-2xl font-bold text-slate-800">Career Planning & Self-Discovery</h3>
+                        <p class="text-slate-600">Understand your strengths and explore potential career paths that align with your passions and skills.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">Skills & Strengths Quiz</h4>
+                                <p class="text-sm text-slate-500 mt-1">Identify your top professional and personal skills to highlight on your resume.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">Take the Quiz →</span>
+                            </a>
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">Interest & Personality Profiler</h4>
+                                <p class="text-sm text-slate-500 mt-1">Discover careers that match your personality and what you love to do.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">Find Your Path →</span>
+                            </a>
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">Career Profiles Library</h4>
+                                <p class="text-sm text-slate-500 mt-1">Explore a day in the life, salary, and outlook for various professions.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">Explore Careers →</span>
+                            </a>
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">Industry Deep Dives</h4>
+                                <p class="text-sm text-slate-500 mt-1">Learn about key roles and trends in major industries like IT, Healthcare, and more.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">View Industries →</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Application Toolkit -->
+                    <div id="tab2" class="tab-content space-y-6 hidden">
+                        <h3 class="text-2xl font-bold text-slate-800">The Application Toolkit</h3>
+                        <p class="text-slate-600">Create compelling resumes, cover letters, and portfolios that get noticed by recruiters.</p>
+                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">Interactive Resume Builder</h4>
+                                <p class="text-sm text-slate-500 mt-1">Build a professional, ATS-friendly resume step-by-step in minutes.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">Start Building →</span>
+                            </a>
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">ATS-Optimized Templates</h4>
+                                <p class="text-sm text-slate-500 mt-1">Download templates designed to pass screening software and impress recruiters.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">Get Templates →</span>
+                            </a>
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">Cover Letter Guides</h4>
+                                <p class="text-sm text-slate-500 mt-1">Learn to write persuasive cover letters that tell your unique story.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">Read Guides →</span>
+                            </a>
+                            <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-500">
+                                <h4 class="font-semibold text-slate-900 text-lg">LinkedIn Profile Optimization</h4>
+                                <p class="text-sm text-slate-500 mt-1">Use our checklist to create a standout profile that attracts opportunities.</p>
+                                <span class="text-sm font-semibold text-blue-600 mt-4 inline-block group-hover:underline">Optimize Profile →</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Other tabs would follow the same improved structure -->
+                    <div id="tab3" class="tab-content space-y-6 hidden">...</div>
+                    <div id="tab4" class="tab-content space-y-6 hidden">...</div>
+                    <div id="tab5" class="tab-content space-y-6 hidden">...</div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <<footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column brand">
+                    <h3 class="footer-logo">JobConnect</h3>
+                    <p>Bridging Talent and Opportunity. Find your next career move or hire the best talent with us.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="#">Find Jobs</a></li>
+                        <li><a href="#">Create Resume</a></li>
+                        <li><a href="#">My Applications</a></li>
+                        <li><a href="#">Saved Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Search Resumes</a></li>
+                        <li><a href="#">Company Profile</a></li>
+                        <li><a href="#">Hiring Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help/FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 JobConnect. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Function to handle tab switching
+            function switchTab(tabId) {
+                // Update button styles
+                tabButtons.forEach(btn => {
+                    if (btn.dataset.tab === tabId) {
+                        btn.classList.add('tab-active');
+                        btn.classList.remove('tab-inactive');
+                    } else {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('tab-inactive');
+                    }
+                });
+
+                // Show/hide content
+                tabContents.forEach(content => {
+                    if (content.id === tabId) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Add click event listeners to buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.dataset.tab;
+                    switchTab(tabId);
+                });
+            });
+
+            // Initialize with the first tab active
+            switchTab('tab1');
+        });
+    </script>
+    <script src="js/header.js"></script>
+
+</body>
+</html>
